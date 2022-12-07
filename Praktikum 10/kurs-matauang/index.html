@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kurs converte</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Kurs rupiah - Mata Uang Asing</legend>
+
+        <table>
+            <tr>
+                <td>nilai Awal</td>
+                <td>Dari</td>
+                <td>Nilai Rupiah</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" id="nilaiAwal" onchange="convert()">
+                </td>
+                <td>
+                    <select id="selectKurs" onchange="convert()">
+                        <option value="0">-- Pilih --</option>
+                        <option value="USD">Dolar US</option>
+                        <option value="SGD">Dolar Singapura</option>
+                        <option value="Ringgit">Yen Jepang</option>
+                        <option value="EURO">Euro</option>
+                        <option value="Riyal">Riyal Arab Saudi</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="text" id="nilaiRupiah" readonly>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+        
+    <script>
+        function convert() {
+            let inAwal = document.getElementById("nilaiAwal").value;
+            let kurs = document.getElementById("selectKurs").value;
+            let hasil;
+
+            if (kurs == "USD") {
+                hasil = inAwal * 9915;
+            } else if (Kurs == "SGD") {
+                hasil = inAwal * 13472;
+            } else if (Kurs == "Ringgit") {
+                hasil = inAwal *874;
+            } else if (Kurs == "Yen") {
+                hasil = inawal * 120;
+            } else if (Kurs == "EURO"){
+                hasil = inAwal *15888;
+            } else if (Kurs == "Riyal") {
+                hasil = inAwal * 3592;
+            } else {
+                hasil = 0;
+            }
+
+            document.getElementById("nilaiRupiah").value = String("Rp. "+ hasil);
+        }
+    </script>
+
+</body>
+</html>
